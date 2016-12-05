@@ -1,13 +1,30 @@
+extern crate argparse;
 #[macro_use]
 extern crate error_chain;
 extern crate regex;
 
 mod common;
 mod day1;
+mod day2;
 mod errors;
 
+use argparse::{ArgumentParser, StoreOption};
+
 fn main() {
-    if let Err(ref e) = day1::day1() {
+    let mut day: Option<u32> = None;
+    let mut parser = ArgumentParser::new();
+    parser.set_description("Advent of Code 2016");
+    parser.refer(&mut day)
+          .add_option(&["-d", "--day"], StoreOption,
+                      "number of challenge to run");
+    parser.parse_args_or_exit();
+    let result = match day {
+        Some(1) => day1::day1(),
+        Some(2) => day2::day2(),
+        Some(_) => { println!("Invalid day specified."); Ok(()) },
+        None => { println!("--day is required."); Ok(()) },
+    };
+    if let Err(ref e) = result {
         println!("error: {}", e);
 
         for e in e.iter().skip(1) {

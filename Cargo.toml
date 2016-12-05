@@ -4,5 +4,6 @@ version = "0.1.0"
 authors = ["Mike Mueller <mike@subfocal.net>"]
 
 [dependencies]
+argparse = ""
 error-chain = "0.7"
 regex = "0.1"

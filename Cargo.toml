@@ -6,4 +6,6 @@ authors = ["Mike Mueller <mike@subfocal.net>"]
 [dependencies]
 argparse = ""
 error-chain = "0.7"
+rand = ""
 regex = "0.1"
+rust-crypto = ""

@@ -1,6 +1,8 @@
 extern crate argparse;
+extern crate crypto;
 #[macro_use]
 extern crate error_chain;
+extern crate rand;
 extern crate regex;
 
 mod common;
@@ -8,6 +10,7 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
 mod errors;
 
 use argparse::{ArgumentParser, StoreOption};
@@ -25,6 +28,7 @@ fn main() {
         Some(2) => day2::day2(),
         Some(3) => day3::day3(),
         Some(4) => day4::day4(),
+        Some(5) => day5::day5(),
         Some(_) => { println!("Invalid day specified."); Ok(()) },
         None => { println!("--day is required."); Ok(()) },
     };

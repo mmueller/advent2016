@@ -38,11 +38,7 @@ fn get_checksum(encrypted_name: &str) -> String {
                         let mut sorted_charset: Vec<char> = chars.chars()
                                                                  .collect();
                         sorted_charset.sort();
-                        // Is this really how you concatenate two vectors??
-                        [checksum, sorted_charset].iter()
-                                                  .flat_map(|c| c.iter())
-                                                  .cloned()
-                                                  .collect()
+                        [checksum, sorted_charset].concat()
                     })
                     .iter()
                     .take(CHECKSUM_LEN)

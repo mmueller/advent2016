@@ -6,6 +6,7 @@ authors = ["Mike Mueller <mike@subfocal.net>"]
 [dependencies]
 argparse = ""
 error-chain = "0.7"
+lazy_static = ""
 rand = ""
 regex = "0.1"
 rust-crypto = ""

@@ -92,7 +92,7 @@ pub fn day8() -> Result<()> {
         Regex::new(r"(row y=(?P<y>\d+)|column x=(?P<x>\d+)) by (?P<amount>\d+)")
                    .chain_err(|| "failed compiling regex")?;
 
-    // Gather addresses from input file
+    // Gather instructions from input file
     let input = &mut String::new();
     common::read_file_to_string("input/day8.txt", input)?;
 

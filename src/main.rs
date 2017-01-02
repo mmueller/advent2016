@@ -17,6 +17,7 @@ mod day6;
 mod day7;
 mod day8;
 mod day9;
+mod day10;
 mod errors;
 
 use argparse::{ArgumentParser, StoreOption};
@@ -39,6 +40,7 @@ fn main() {
         Some(7) => day7::day7(),
         Some(8) => day8::day8(),
         Some(9) => day9::day9(),
+        Some(10) => day10::day10(),
         Some(_) => { println!("Invalid day specified."); Ok(()) },
         None => { println!("--day is required."); Ok(()) },
     };
